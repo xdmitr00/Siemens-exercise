@@ -1,0 +1,180 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "mysql_for_sinus"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "ReferenceLines": [],
+        "border": {
+          "color": "yellow",
+          "size": 0
+        },
+        "fieldSets": [
+          {
+            "col": 1,
+            "color": "#d0c4fc",
+            "colorCol": -1,
+            "dotSize": 2,
+            "hidden": false,
+            "lineSize": 1,
+            "lineType": "none",
+            "polynomialOrder": 3,
+            "sizeCol": -1
+          }
+        ],
+        "grid": {
+          "color": "gray"
+        },
+        "label": {
+          "col": -1,
+          "color": "#CCC",
+          "textSize": 2
+        },
+        "legend": {
+          "show": false,
+          "size": 3
+        },
+        "xAxis": {
+          "col": 0,
+          "inverted": false
+        },
+        "xAxisExtents": {
+          "min": null,
+          "max": null
+        },
+        "xAxisTitle": {
+          "text": "x",
+          "color": "white",
+          "textSize": 2,
+          "rotated": false,
+          "logScale": false,
+          "fontSize": 4,
+          "fontColor": "white"
+        },
+        "xMargins": {
+          "lower": 30,
+          "upper": 10
+        },
+        "yAxisExtents": {
+          "min": null,
+          "max": null
+        },
+        "yAxisTitle": {
+          "text": "",
+          "color": "#777",
+          "textSize": 1,
+          "rotated": false,
+          "logScale": false,
+          "fontSize": 4,
+          "fontColor": "white"
+        },
+        "yMargins": {
+          "lower": 20,
+          "upper": 20
+        }
+      },
+      "targets": [
+        {
+          "dataset": "grafana",
+          "datasource": {
+            "type": "mysql",
+            "uid": "P211906C1C32DB77E"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT x AS \"time\", y FROM grafana.sine",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "alias": "\"time\"",
+                "parameters": [
+                  {
+                    "name": "x",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "y",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "sine"
+        }
+      ],
+      "title": "Sinus visualization",
+      "type": "michaeldmoore-scatter-panel"
+    }
+  ],
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Sinus",
+  "uid": "WUNxDFJ4k",
+  "version": 1,
+  "weekStart": ""
+}

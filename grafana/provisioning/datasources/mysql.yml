@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  - name: MySQL
+    type: mysql
+    url: mysql:3306
+    database: grafana
+    user: grafana
+    uid: mysql_for_sinus
+    jsonData:
+      maxOpenConns: 0 # Grafana v5.4+
+      maxIdleConns: 2 # Grafana v5.4+
+      connMaxLifetime: 14400 # Grafana v5.4+
+    secureJsonData:
+      password: grafana
